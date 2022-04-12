@@ -1,0 +1,6 @@
+# coreutils-swift
+Another attempt at rewriting coreutils in Swift.
+
+## Disclaimer
+NO ATTEMPT WAS MADE AT ADHEREING TO POSIX STANDARDS, YET  
+AT THE MOMENT, THIS IS AN ABOMINATION COMBINATION OF BSD, LINUX AND MACOS COREUTILS
