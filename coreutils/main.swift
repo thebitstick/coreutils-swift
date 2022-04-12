@@ -92,44 +92,16 @@ default:
 				eprint("Unknown option")
 			}
 		}
-	/*case "base32":
+	/*case "basename":
 		print()
-	case "base64":
-		print()*/
-	case "basename":
-		print()
-	/*case "basenc":
-		print()*/
 	case "cat":
 		print()
-	/*case "chcon":
-		print()
-	case "chgrp":
-		print()
-	case "chmod":
-		print()
-	case "chown":
-		print()
-	case "chroot":
-		print()
-	case "cksum":
-		print()*/
 	case "clear":
 		print()
-	/*case "comm":
-		print()
-	case "csplit":
-		print()
-	case "cut":
-		print()
-	case "dircolors":
-		print()*/
 	case "dirname":
 		print()
-	/*case "du":
-		print()*/
 	case "echo":
-		print()
+		print()*/
 	case "env":
 		switch CommandLine.arguments.count {
 		case 2:
@@ -152,10 +124,6 @@ default:
 				eprint("Unknown option")
 			}
 		}
-	/*case "expand":
-		print()
-	case "factor":
-		print()*/
 	case "false":
 		switch CommandLine.arguments.count {
 		case 2:
@@ -178,18 +146,6 @@ default:
 				exit(1)
 			}
 		}
-	/*case "fmt":
-		print()
-	case "fold":
-		print()
-	case "groups":
-		print()
-	case "hashsum":
-		print()
-	case "head":
-		print()
-	case "hostid":
-		print()*/
 	case "hostname":
 		switch CommandLine.arguments.count {
 		case 2:
@@ -212,53 +168,11 @@ default:
 				eprint("Unable to set hostname to: " + CommandLine.arguments[2])
 			}
 		}
-	case "id":
+	/*case "id":
 		print()
-	/*case "join":
-		print()*/
 	case "kill":
 		print()
-	/*case "link":
-		print()
-	case "ln":
-		print()
-	case "logname":
-		print()
-	case "md5sum":
-		print()
-	case "sha1sum":
-		print()
-	case "sha224sum":
-		print()
-	case "sha256sum":
-		print()
-	case "sha384sum":
-		print()
-	case "sha512sum":
-		print()
-	case "mkdir":
-		print()
-	case "mkfifo":
-		print()
-	case "mknod":
-		print()
-	case "mktemp":
-		print()
-	case "mv":
-		print()*/
 	case "nice":
-		print()
-	/*case "nl":
-		print()
-	case "nohup":
-		print()
-	case "nproc":
-		print()
-	case "paste":
-		print()
-	case "pathchk":
-		print()
-	case "pinky":
 		print()*/
 	case "printenv":
 		switch CommandLine.arguments.count {
@@ -282,8 +196,6 @@ default:
 				eprint("Unknown option")
 			}
 		}
-	/*case "ptx":
-		print()*/
 	case "pwd":
 		switch CommandLine.arguments.count {
 		case 2:
@@ -306,24 +218,6 @@ default:
 				eprint("Unknown option")
 			}
 		}
-	/*case "readlink":
-		print()
-	case "realpath":
-		print()
-	case "relpath":
-		print()
-	case "rm":
-		print()
-	case "rmdir":
-		print()
-	case "runcon":
-		print()
-	case "seq":
-		print()
-	case "shred":
-		print()
-	case "shuf":
-		print()*/
 	case "sleep":
 		switch CommandLine.arguments.count {
 		case 2:
@@ -354,12 +248,8 @@ default:
 				}
 			}
 		}
-	/*case "stat":
-		print()
-	case "stdbuf":
+	/*case "sum":
 		print()*/
-	case "sum":
-		print()
 	case "sync":
 		switch CommandLine.arguments.count {
 		case 2:
@@ -400,13 +290,7 @@ default:
 				eprint("Unknown option")
 			}
 		}
-	/*case "tee":
-		print()
-	case "timeout":
-		print()*/
-	case "touch":
-		print()
-	/*case "tr":
+	/*case "touch":
 		print()*/
 	case "true":
 		switch CommandLine.arguments.count {
@@ -430,27 +314,9 @@ default:
 				exit(0)
 			}
 		}
-	/*case "truncate":
+	/*case "uname":
 		print()
-	case "tsort":
-		print()
-	case "tty":
-		print()*/
-	case "uname":
-		print()
-	/*case "unexpand":
-		print()
-	case "uniq":
-		print()
-	case "unlink":
-		print()*/
 	case "uptime":
-		print()
-	/*case "users":
-		print()
-	case "wc":
-		print()
-	case "who":
 		print()*/
 	case "whoami":
 		switch CommandLine.arguments.count {
@@ -502,40 +368,8 @@ default:
 		}
 	
 	// Semi-Done on uutils/coreutils
-	/*case "cp":
-		print()
-	case "date":
-		print()
-	case "dd":
-		print()
-	case "df":
-		print()
-	case "expr":
-		print()
-	case "install":
-		print()*/
 	case "ls":
 		print()
-	/*case "more":
-		print()
-	case "numfmt":
-		print()
-	case "od":
-		print()
-	case "pr":
-		print()
-	case "printf":
-		print()
-	case "sort":
-		print()
-	case "split":
-		print()
-	case "tac":
-		print()
-	case "tail":
-		print()
-	case "test":
-		print()*/
 	
 	// To Do on uutils/coreutils
 	/*case "stty":
@@ -545,3 +379,176 @@ default:
 		eprint("Unknown command")
 	}
 }
+
+
+/* UNCOMPLETED COMMANDS */
+/* Done on uutils/coreutils */
+/*case "base32":
+	print()
+case "base64":
+	print()
+case "basenc":
+	print()
+case "chcon":
+	print()
+case "chgrp":
+	print()
+case "chmod":
+	print()
+case "chown":
+	print()
+case "chroot":
+	print()
+case "cksum":
+	print()
+case "comm":
+	print()
+case "csplit":
+	print()
+case "cut":
+	print()
+case "dircolors":
+	print()
+case "du":
+	print()
+case "expand":
+	print()
+case "factor":
+	print()
+case "fmt":
+	print()
+case "fold":
+	print()
+case "groups":
+	print()
+case "hashsum":
+	print()
+case "head":
+	print()
+case "hostid":
+	print()
+case "join":
+	print()
+case "link":
+	print()
+case "ln":
+	print()
+case "logname":
+	print()
+case "md5sum":
+	print()
+case "sha1sum":
+	print()
+case "sha224sum":
+	print()
+case "sha256sum":
+	print()
+case "sha384sum":
+	print()
+case "sha512sum":
+	print()
+case "mkdir":
+	print()
+case "mkfifo":
+	print()
+case "mknod":
+	print()
+case "mktemp":
+	print()
+case "mv":
+	print()
+case "nl":
+	print()
+case "nohup":
+	print()
+case "nproc":
+	print()
+case "paste":
+	print()
+case "pathchk":
+	print()
+case "pinky":
+	print()
+case "ptx":
+	print()
+case "readlink":
+	print()
+case "realpath":
+	print()
+case "relpath":
+	print()
+case "rm":
+	print()
+case "rmdir":
+	print()
+case "runcon":
+	print()
+case "seq":
+	print()
+case "shred":
+	print()
+case "shuf":
+	print()
+case "stat":
+	print()
+case "stdbuf":
+	print()
+case "tee":
+	print()
+case "timeout":
+	print()
+case "tr":
+	print()
+case "truncate":
+	print()
+case "tsort":
+	print()
+case "tty":
+	print()
+case "unexpand":
+	print()
+case "uniq":
+	print()
+case "unlink":
+	print()
+case "users":
+	print()
+case "wc":
+	print()
+case "who":
+	print()*/
+
+
+/* Semi-Done on uutils/coreutils */
+/*case "cp":
+	print()
+case "date":
+	print()
+case "dd":
+	print()
+case "df":
+	print()
+case "expr":
+	print()
+case "install":
+	print()
+ case "more":
+	 print()
+ case "numfmt":
+	 print()
+ case "od":
+	 print()
+ case "pr":
+	 print()
+ case "printf":
+	 print()
+ case "sort":
+	 print()
+ case "split":
+	 print()
+ case "tac":
+	 print()
+ case "tail":
+	 print()
+ case "test":
+	 print()*/
