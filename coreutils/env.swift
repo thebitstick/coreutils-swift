@@ -1,10 +1,3 @@
-//
-//  env.swift
-//  coreutils
-//
-//  Created by Jorge Huicochea on 4/12/22.
-//
-
 import Foundation
 
 func Env(_ shift: Int) {

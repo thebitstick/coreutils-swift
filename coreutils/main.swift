@@ -1,10 +1,3 @@
-//
-//  main.swift
-//  coreutils
-//
-//  Created by TheBitStick.
-//
-
 import Foundation
 
 #if os(Linux) || os(FreeBSD)

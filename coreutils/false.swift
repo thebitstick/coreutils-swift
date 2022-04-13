@@ -1,10 +1,3 @@
-//
-//  false.swift
-//  coreutils
-//
-//  Created by Jorge Huicochea on 4/12/22.
-//
-
 import Foundation
 
 func False(_ shift: Int) {

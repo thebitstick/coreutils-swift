@@ -1,10 +1,3 @@
-//
-//  arch.swift
-//  coreutils
-//
-//  Created by Jorge Huicochea on 4/12/22.
-//
-
 import Foundation
 
 func Arch(_ shift: Int) {
