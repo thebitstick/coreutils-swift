@@ -5,6 +5,14 @@
 	import Foundation
 #endif
 
+public struct State {
+	var shift: Int
+	var command: String
+	var input: [String] = CommandLine.arguments
+}
+
+public var globalState = State(shift: 0, command: "")
+
 let VERSION = "0.0.1"
 let Commands = ["arch",			// COMPLETE
 				"env",			// INCOMPLETE {WRONG FORMATTING, NO OPTIONS}
@@ -32,7 +40,7 @@ func eprint(_ str: String) {
 }
 
 func displayRootHelp() {
-	print("Usage: " + CommandLine.arguments[0] + " command [OPTIONS]")
+	print("Usage: " + globalState.input[0] + " command [OPTIONS]")
 	print("\nAvailable commands:")
 	print(Commands.formatted())
 }

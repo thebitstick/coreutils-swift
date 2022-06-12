@@ -1,17 +1,17 @@
 import Foundation
 
 func Hostname() {
-	switch CommandLine.arguments.count {
-	case (1+shift):
-		print(Host.current().names[shift].replacingOccurrences(of: ".local", with: ""))
+	switch globalState.input.count {
+	case (1 + globalState.shift):
+		print(Host.current().names[globalState.shift].replacingOccurrences(of: ".local", with: ""))
 	default:
-		switch CommandLine.arguments[(1+shift)] {
+		switch globalState.input[(1 + globalState.shift)] {
 		case "--help":
-			print("Usage: " + CommandLine.arguments[shift] + " OPTION")
+			print("Usage: " + globalState.input[globalState.shift] + " OPTION")
 			print("--help\t\t\tdisplay this help and exit")
 			print("--version\t\toutput version information and exit")
 		case "-h":
-			print("Usage: " + CommandLine.arguments[shift] + " OPTION")
+			print("Usage: " + globalState.input[globalState.shift] + " OPTION")
 			print("--help\t\t\tdisplay this help and exit")
 			print("--version\t\toutput version information and exit")
 		case "--version":
@@ -19,7 +19,7 @@ func Hostname() {
 		case "-v":
 			print(VERSION)
 		default:
-			eprint("Unable to set hostname to: " + CommandLine.arguments[(1+shift)])
+			eprint("Unable to set hostname to: " + globalState.input[(1 + globalState.shift)])
 		}
 	}
 }

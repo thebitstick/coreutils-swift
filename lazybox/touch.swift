@@ -2,19 +2,19 @@ import Foundation
 
 func Touch() {
 	var ignore = false
-	switch CommandLine.arguments.count {
-	case (1+shift):
-		print("Usage: " + CommandLine.arguments[shift] + " [expletive]")
+	switch globalState.input.count {
+	case (1 + globalState.shift):
+		print("Usage: " + globalState.input[globalState.shift] + " [expletive]")
 		print("--help\t\t\tdisplay this help and exit")
 		print("--version\t\toutput version information and exit")
 	default:
-		switch CommandLine.arguments[(1+shift)] {
+		switch globalState.input[(1 + globalState.shift)] {
 		case "--help":
-			print("Usage: " + CommandLine.arguments[shift] + " [expletive]")
+			print("Usage: " + globalState.input[globalState.shift] + " [expletive]")
 			print("--help\t\t\tdisplay this help and exit")
 			print("--version\t\toutput version information and exit")
 		case "-h":
-			print("Usage: " + CommandLine.arguments[shift] + " [expletive]")
+			print("Usage: " + globalState.input[globalState.shift] + " [expletive]")
 			print("--help\t\t\tdisplay this help and exit")
 			print("--version\t\toutput version information and exit")
 		case "--version":
@@ -24,33 +24,33 @@ func Touch() {
 		case "-A":
 			eprint("Not implemented")
 		case "-a":
-			if CommandLine.arguments[(1+shift)] == "-m" {
-				shift += 1
+			if globalState.input[(1 + globalState.shift)] == "-m" {
+				globalState.shift += 1
 			}
-			if FileManager.default.fileExists(atPath: CommandLine.arguments[(1+shift)]) {
+			if FileManager.default.fileExists(atPath: globalState.input[(1 + globalState.shift)]) {
 				do {
 					try FileManager.default.setAttributes([FileAttributeKey.creationDate: NSDate()],
-														  ofItemAtPath: CommandLine.arguments[(1+shift)])
+														  ofItemAtPath: globalState.input[(1 + globalState.shift)])
 				} catch {
 					print(error)
 					eprint("Unable to modify access date")
 				}
 			}
 		default:
-			if CommandLine.arguments[(1+shift)] == "-c" {
-				shift += 1
+			if globalState.input[(1 + globalState.shift)] == "-c" {
+				globalState.shift += 1
 				ignore = true
 			}
-			if FileManager.default.fileExists(atPath: CommandLine.arguments[(1+shift)]) {
+			if FileManager.default.fileExists(atPath: globalState.input[(1 + globalState.shift)]) {
 				do {
 					try FileManager.default.setAttributes([FileAttributeKey.modificationDate: NSDate()],
-														  ofItemAtPath: CommandLine.arguments[(1+shift)])
+														  ofItemAtPath: globalState.input[(1 + globalState.shift)])
 				} catch {
 					print(error)
 					eprint("Unable to modify modification date")
 				}
 			} else if !ignore {
-				FileManager.default.createFile(atPath: CommandLine.arguments[(1+shift)], contents: nil, attributes: nil)
+				FileManager.default.createFile(atPath: globalState.input[(1 + globalState.shift)], contents: nil, attributes: nil)
 			}
 		}
 	}

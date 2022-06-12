@@ -5,13 +5,11 @@
 	import Foundation
 #endif
 
-public var shift = 0
-
 // Parsing https://www.freebsd.org/cgi/man.cgi
-switch CommandLine.arguments.count {
-	case shift: eprint("Fatal error")
+switch globalState.input.count {
+	case globalState.shift: eprint("Fatal error")
 	default:
-		switch CommandLine.arguments[shift].replacingOccurrences(of: "./", with: "") {
+		switch globalState.input[globalState.shift].replacingOccurrences(of: "./", with: "") {
 			case "arch": Arch()
 			case "env": Env()
 			case "false": False()
@@ -25,11 +23,11 @@ switch CommandLine.arguments.count {
 			case "whoami": Whoami()
 			case "yes": Yes()
 			default:
-				switch CommandLine.arguments.count {
+				switch globalState.input.count {
 					case 1: displayRootHelp()
 					default:
-						shift += 1
-						switch CommandLine.arguments[shift] {
+						globalState.shift += 1
+						switch globalState.input[globalState.shift] {
 							case "--help": displayRootHelp()
 							case "-h": displayRootHelp()
 							case "arch": Arch()
