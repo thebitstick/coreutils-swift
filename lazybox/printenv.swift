@@ -1,9 +1,9 @@
 import Foundation
 
-func Pwd(_ shift: Int) {
+func Printenv() {
 	switch CommandLine.arguments.count {
 	case (1+shift):
-		print(String(cString: getcwd(nil, 0)))
+		print(ProcessInfo.processInfo.environment as AnyObject)
 	default:
 		switch CommandLine.arguments[(1+shift)] {
 		case "--help":

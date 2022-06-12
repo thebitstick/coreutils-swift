@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <Scheme
-   LastUpgradeVersion = "1330"
+   LastUpgradeVersion = "1340"
    version = "1.3">
    <BuildAction
       parallelizeBuildables = "YES"
@@ -15,9 +15,9 @@
             <BuildableReference
                BuildableIdentifier = "primary"
                BlueprintIdentifier = "B994727E2805BA040023219F"
-               BuildableName = "coreutils"
-               BlueprintName = "coreutils"
-               ReferencedContainer = "container:coreutils.xcodeproj">
+               BuildableName = "lazybox"
+               BlueprintName = "lazybox"
+               ReferencedContainer = "container:lazybox.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
@@ -45,9 +45,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B994727E2805BA040023219F"
-            BuildableName = "coreutils"
-            BlueprintName = "coreutils"
-            ReferencedContainer = "container:coreutils.xcodeproj">
+            BuildableName = "lazybox"
+            BlueprintName = "lazybox"
+            ReferencedContainer = "container:lazybox.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </LaunchAction>
@@ -62,9 +62,9 @@
          <BuildableReference
             BuildableIdentifier = "primary"
             BlueprintIdentifier = "B994727E2805BA040023219F"
-            BuildableName = "coreutils"
-            BlueprintName = "coreutils"
-            ReferencedContainer = "container:coreutils.xcodeproj">
+            BuildableName = "lazybox"
+            BlueprintName = "lazybox"
+            ReferencedContainer = "container:lazybox.xcodeproj">
          </BuildableReference>
       </BuildableProductRunnable>
    </ProfileAction>

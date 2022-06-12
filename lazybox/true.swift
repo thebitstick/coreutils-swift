@@ -1,6 +1,6 @@
 import Foundation
 
-func True(_ shift: Int) {
+func True() {
 	switch CommandLine.arguments.count {
 	case (1+shift):
 		exit(0)

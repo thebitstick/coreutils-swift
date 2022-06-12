@@ -1,9 +1,9 @@
 import Foundation
 
-func Hostname(_ shift: Int) {
+func False() {
 	switch CommandLine.arguments.count {
 	case (1+shift):
-		print(Host.current().names[shift].replacingOccurrences(of: ".local", with: ""))
+		exit(1)
 	default:
 		switch CommandLine.arguments[(1+shift)] {
 		case "--help":
@@ -19,7 +19,7 @@ func Hostname(_ shift: Int) {
 		case "-v":
 			print(VERSION)
 		default:
-			eprint("Unable to set hostname to: " + CommandLine.arguments[(1+shift)])
+			exit(1)
 		}
 	}
 }

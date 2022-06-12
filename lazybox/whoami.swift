@@ -1,6 +1,6 @@
 import Foundation
 
-func Whoami(_ shift: Int) {
+func Whoami() {
 	switch CommandLine.arguments.count {
 	case (1+shift):
 		print(NSUserName())

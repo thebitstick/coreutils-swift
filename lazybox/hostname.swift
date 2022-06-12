@@ -1,9 +1,9 @@
 import Foundation
 
-func Env(_ shift: Int) {
+func Hostname() {
 	switch CommandLine.arguments.count {
 	case (1+shift):
-		print(ProcessInfo.processInfo.environment as AnyObject)
+		print(Host.current().names[shift].replacingOccurrences(of: ".local", with: ""))
 	default:
 		switch CommandLine.arguments[(1+shift)] {
 		case "--help":
@@ -19,7 +19,7 @@ func Env(_ shift: Int) {
 		case "-v":
 			print(VERSION)
 		default:
-			eprint("Unknown option")
+			eprint("Unable to set hostname to: " + CommandLine.arguments[(1+shift)])
 		}
 	}
 }

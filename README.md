@@ -1,4 +1,4 @@
-# coreutils-swift
+# lazybox
 Another attempt at rewriting coreutils in Swift.
 
 ## Disclaimer

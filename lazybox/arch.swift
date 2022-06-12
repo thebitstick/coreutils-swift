@@ -1,6 +1,6 @@
 import Foundation
 
-func Arch(_ shift: Int) {
+func Arch() {
 	switch CommandLine.arguments.count {
 	case (1+shift):
 		#if arch(i386)

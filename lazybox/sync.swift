@@ -1,6 +1,6 @@
 import Foundation
 
-func Sync(_ shift: Int) {
+func Sync() {
 	switch CommandLine.arguments.count {
 	case (1+shift):
 		sync()

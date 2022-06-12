@@ -19,6 +19,8 @@
 		B976124128065C9700944076 /* whoami.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976124028065C9700944076 /* whoami.swift */; };
 		B976124328065CAF00944076 /* yes.swift in Sources */ = {isa = PBXBuildFile; fileRef = B976124228065CAF00944076 /* yes.swift */; };
 		B99472832805BA040023219F /* main.swift in Sources */ = {isa = PBXBuildFile; fileRef = B99472822805BA040023219F /* main.swift */; };
+		B9B9E64D280758D600B45C71 /* touch.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9B9E64C280758D600B45C71 /* touch.swift */; };
+		B9F03D832855F62700F4FDD7 /* utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = B9F03D822855F62700F4FDD7 /* utility.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXCopyFilesBuildPhase section */
@@ -45,8 +47,10 @@
 		B976123E28065C8000944076 /* true.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = true.swift; sourceTree = "<group>"; };
 		B976124028065C9700944076 /* whoami.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = whoami.swift; sourceTree = "<group>"; };
 		B976124228065CAF00944076 /* yes.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = yes.swift; sourceTree = "<group>"; };
-		B994727F2805BA040023219F /* coreutils */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = coreutils; sourceTree = BUILT_PRODUCTS_DIR; };
+		B994727F2805BA040023219F /* lazybox */ = {isa = PBXFileReference; explicitFileType = "compiled.mach-o.executable"; includeInIndex = 0; path = lazybox; sourceTree = BUILT_PRODUCTS_DIR; };
 		B99472822805BA040023219F /* main.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = main.swift; sourceTree = "<group>"; };
+		B9B9E64C280758D600B45C71 /* touch.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = touch.swift; sourceTree = "<group>"; };
+		B9F03D822855F62700F4FDD7 /* utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = utility.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -63,7 +67,7 @@
 		B99472762805BA040023219F = {
 			isa = PBXGroup;
 			children = (
-				B99472812805BA040023219F /* coreutils */,
+				B99472812805BA040023219F /* lazybox */,
 				B99472802805BA040023219F /* Products */,
 			);
 			sourceTree = "<group>";
@@ -71,15 +75,17 @@
 		B99472802805BA040023219F /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				B994727F2805BA040023219F /* coreutils */,
+				B994727F2805BA040023219F /* lazybox */,
 			);
 			name = Products;
 			sourceTree = "<group>";
 		};
-		B99472812805BA040023219F /* coreutils */ = {
+		B99472812805BA040023219F /* lazybox */ = {
 			isa = PBXGroup;
 			children = (
 				B99472822805BA040023219F /* main.swift */,
+				B9F03D822855F62700F4FDD7 /* utility.swift */,
+				B9B9E64C280758D600B45C71 /* touch.swift */,
 				B976124228065CAF00944076 /* yes.swift */,
 				B976124028065C9700944076 /* whoami.swift */,
 				B976123E28065C8000944076 /* true.swift */,
@@ -92,15 +98,15 @@
 				B976123028065BF800944076 /* env.swift */,
 				B976122E28065B9A00944076 /* arch.swift */,
 			);
-			path = coreutils;
+			path = lazybox;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
-		B994727E2805BA040023219F /* coreutils */ = {
+		B994727E2805BA040023219F /* lazybox */ = {
 			isa = PBXNativeTarget;
-			buildConfigurationList = B99472862805BA040023219F /* Build configuration list for PBXNativeTarget "coreutils" */;
+			buildConfigurationList = B99472862805BA040023219F /* Build configuration list for PBXNativeTarget "lazybox" */;
 			buildPhases = (
 				B994727B2805BA040023219F /* Sources */,
 				B994727C2805BA040023219F /* Frameworks */,
@@ -110,9 +116,11 @@
 			);
 			dependencies = (
 			);
-			name = coreutils;
+			name = lazybox;
+			packageProductDependencies = (
+			);
 			productName = coreutils;
-			productReference = B994727F2805BA040023219F /* coreutils */;
+			productReference = B994727F2805BA040023219F /* lazybox */;
 			productType = "com.apple.product-type.tool";
 		};
 /* End PBXNativeTarget section */
@@ -123,14 +131,14 @@
 			attributes = {
 				BuildIndependentTargetsInParallel = 1;
 				LastSwiftUpdateCheck = 1330;
-				LastUpgradeCheck = 1330;
+				LastUpgradeCheck = 1340;
 				TargetAttributes = {
 					B994727E2805BA040023219F = {
 						CreatedOnToolsVersion = 13.3.1;
 					};
 				};
 			};
-			buildConfigurationList = B994727A2805BA040023219F /* Build configuration list for PBXProject "coreutils" */;
+			buildConfigurationList = B994727A2805BA040023219F /* Build configuration list for PBXProject "lazybox" */;
 			compatibilityVersion = "Xcode 13.0";
 			developmentRegion = en;
 			hasScannedForEncodings = 0;
@@ -139,11 +147,14 @@
 				Base,
 			);
 			mainGroup = B99472762805BA040023219F;
+			packageReferences = (
+				B9F03D842855F82500F4FDD7 /* XCRemoteSwiftPackageReference "swift-argument-parser" */,
+			);
 			productRefGroup = B99472802805BA040023219F /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
 			targets = (
-				B994727E2805BA040023219F /* coreutils */,
+				B994727E2805BA040023219F /* lazybox */,
 			);
 		};
 /* End PBXProject section */
@@ -159,8 +170,10 @@
 				B99472832805BA040023219F /* main.swift in Sources */,
 				B976123D28065C7100944076 /* sync.swift in Sources */,
 				B976123F28065C8000944076 /* true.swift in Sources */,
+				B9F03D832855F62700F4FDD7 /* utility.swift in Sources */,
 				B976123328065C0D00944076 /* false.swift in Sources */,
 				B976122F28065B9A00944076 /* arch.swift in Sources */,
+				B9B9E64D280758D600B45C71 /* touch.swift in Sources */,
 				B976123128065BF800944076 /* env.swift in Sources */,
 				B976124328065CAF00944076 /* yes.swift in Sources */,
 				B976124128065C9700944076 /* whoami.swift in Sources */,
@@ -287,6 +300,7 @@
 		B99472872805BA040023219F /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BXP6B4JX57;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -298,6 +312,7 @@
 		B99472882805BA040023219F /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = BXP6B4JX57;
 				ENABLE_HARDENED_RUNTIME = YES;
@@ -309,7 +324,7 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		B994727A2805BA040023219F /* Build configuration list for PBXProject "coreutils" */ = {
+		B994727A2805BA040023219F /* Build configuration list for PBXProject "lazybox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B99472842805BA040023219F /* Debug */,
@@ -318,7 +333,7 @@
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
 		};
-		B99472862805BA040023219F /* Build configuration list for PBXNativeTarget "coreutils" */ = {
+		B99472862805BA040023219F /* Build configuration list for PBXNativeTarget "lazybox" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
 				B99472872805BA040023219F /* Debug */,
@@ -328,6 +343,17 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		B9F03D842855F82500F4FDD7 /* XCRemoteSwiftPackageReference "swift-argument-parser" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/apple/swift-argument-parser.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 1.0.0;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
 	};
 	rootObject = B99472772805BA040023219F /* Project object */;
 }

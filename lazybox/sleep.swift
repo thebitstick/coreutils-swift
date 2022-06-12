@@ -1,6 +1,6 @@
 import Foundation
 
-func Sleep(_ shift: Int) {
+func Sleep() {
 	switch CommandLine.arguments.count {
 	case (1+shift):
 		print("Usage: " + CommandLine.arguments[shift] + " seconds")

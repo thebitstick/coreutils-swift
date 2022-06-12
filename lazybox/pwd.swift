@@ -1,9 +1,9 @@
 import Foundation
 
-func False(_ shift: Int) {
+func Pwd() {
 	switch CommandLine.arguments.count {
 	case (1+shift):
-		exit(1)
+		print(String(cString: getcwd(nil, 0)))
 	default:
 		switch CommandLine.arguments[(1+shift)] {
 		case "--help":
@@ -19,7 +19,7 @@ func False(_ shift: Int) {
 		case "-v":
 			print(VERSION)
 		default:
-			exit(1)
+			eprint("Unknown option")
 		}
 	}
 }

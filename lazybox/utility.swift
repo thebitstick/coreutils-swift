@@ -1,12 +1,10 @@
-import Foundation
-
 #if os(Linux) || os(FreeBSD)
 	import Glibc
 #else
 	import Darwin
+	import Foundation
 #endif
 
-// Utilities
 let VERSION = "0.0.1"
 let Commands = ["arch",			// COMPLETE
 				"env",			// INCOMPLETE {WRONG FORMATTING, NO OPTIONS}
@@ -16,6 +14,7 @@ let Commands = ["arch",			// COMPLETE
 				"pwd",			// COMPLETE
 				"sleep", 		// COMPLETE
 				"sync", 		// INCOMPLETE {NO OPTIONS}
+				"touch",		//
 				"true", 		// COMPLETE
 				"whoami", 		// COMPLETE
 				"yes" 			// COMPLETE
@@ -38,58 +37,7 @@ func displayRootHelp() {
 	print(Commands.formatted())
 }
 
-// Parsing https://www.freebsd.org/cgi/man.cgi
 public var errStream = StderrOutputStream()
-switch CommandLine.arguments.count {
-case 0: eprint("Fatal error")
-default:
-	switch CommandLine.arguments[0].replacingOccurrences(of: "./", with: "") {
-	case "arch": Arch(0)
-	case "env": Env(0)
-	case "false": False(0)
-	case "hostname": Hostname(0)
-	case "printenv": Printenv(0)
-	case "pwd": Pwd(0)
-	case "sleep": Sleep(0)
-	case "sync": Sync(0)
-	case "true": True(0)
-	case "whoami": Whoami(0)
-	case "yes": Yes(0)
-	default:
-		switch CommandLine.arguments.count {
-		case 1: displayRootHelp()
-		default:
-			switch CommandLine.arguments[1] {
-			case "--help": displayRootHelp()
-			case "-h": displayRootHelp()
-			case "arch": Arch(1)
-			/*case "basename": print()
-			case "cat": print()
-			case "clear": print()
-			case "dirname": print()
-			case "echo": print()*/
-			case "env": Env(1)
-			case "false": False(1)
-			case "hostname": Hostname(1)
-			/*case "id": print()
-			case "kill": print()
-			case "nice": print()*/
-			case "printenv": Printenv(1)
-			case "pwd": Pwd(1)
-			case "sleep": Sleep(1)
-			/*case "sum": print()*/
-			case "sync": Sync(1)
-			/*case "touch": print()*/
-			case "true": True(1)
-			/*case "uname": print()
-			case "uptime": print()*/
-			case "whoami": Whoami(1)
-			case "yes": Yes(1)
-			default: eprint("Unknown command")
-			}
-		}
-	}
-}
 
 /* UNCOMPLETED COMMANDS */
 /* Done on uutils/coreutils */

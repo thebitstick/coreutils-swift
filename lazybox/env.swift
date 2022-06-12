@@ -1,19 +1,17 @@
 import Foundation
 
-func Yes(_ shift: Int) {
+func Env() {
 	switch CommandLine.arguments.count {
 	case (1+shift):
-		while (true) {
-				print("y")
-		}
+		print(ProcessInfo.processInfo.environment as AnyObject)
 	default:
 		switch CommandLine.arguments[(1+shift)] {
 		case "--help":
-			print("Usage: " + CommandLine.arguments[shift] + " [expletive]")
+			print("Usage: " + CommandLine.arguments[shift] + " OPTION")
 			print("--help\t\t\tdisplay this help and exit")
 			print("--version\t\toutput version information and exit")
 		case "-h":
-			print("Usage: " + CommandLine.arguments[shift] + " [expletive]")
+			print("Usage: " + CommandLine.arguments[shift] + " OPTION")
 			print("--help\t\t\tdisplay this help and exit")
 			print("--version\t\toutput version information and exit")
 		case "--version":
@@ -21,9 +19,7 @@ func Yes(_ shift: Int) {
 		case "-v":
 			print(VERSION)
 		default:
-			while (true) {
-				print(CommandLine.arguments[(1+shift)])
-			}
+			eprint("Unknown option")
 		}
 	}
 }
